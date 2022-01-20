@@ -1,0 +1,7 @@
+x min = -26mm
+y min = -32mm
+x max = 32mm
+y max 34mm
+gantry height = 25.0mm
+number of extruders = 1
+apply extruder offsets to gcode = yes

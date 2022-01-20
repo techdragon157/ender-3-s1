@@ -1,0 +1,8 @@
+x (width) = 220mm
+y (depth) = 220mm
+z (height) = 270mm
+build plate shape = rectangular
+origin at center = no
+heated bed = yes
+heated build volume = no
+gcode flavor = marlin
