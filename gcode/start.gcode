@@ -1,6 +1,7 @@
 M300 S1000 P500 ;Chirp to indicate starting to print
 
 G28 ;Home
+M420 S1 ;Load Mesh
 
 G92 E0 ;Reset Extruder
 G1 Z2.0 F3000 ;Move Z Axis up
