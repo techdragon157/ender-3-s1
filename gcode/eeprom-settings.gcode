@@ -1,46 +1,139 @@
-G21    ; Units in mm (mm)
-
-; Filament settings: Disabled
+; Linear Units:
+G21 ; (mm)
+; Temperature Units:
+M149 C ; Units in Celsius
+; Filament settings (Disabled):
 M200 S0 D1.75
 ; Steps per unit:
 M92 X80.00 Y80.00 Z400.00 E424.90
-; Maximum feedrates (units/s):
-M203 X300.00 Y300.00 Z5.00 E25.00
-; Maximum Acceleration (units/s2):
-M201 X500.00 Y500.00 Z100.00 E1000.00
-; Acceleration (units/s2): P<print_accel> R<retract_accel> T<travel_accel>
-M204 P500.00 R800.00 T500.00
-; Advanced: B<min_segment_time_us> S<min_feedrate> T<min_travel_feedrate> X<max_x_jerk> Y<max_y_jerk> Z<max_z_jerk> E<max_e_jerk>
-M205 B20000.00 S0.00 T0.00 X5.00 Y5.00 Z0.30 E5.00
-; Home offset:
-M206 X0.00 Y0.00 Z0.00
+; Max feedrates (units/s):
+M203 X300.00 Y300.00 Z25.00 E60.00
+; Max Acceleration (units/s2):
+M201 X800.00 Y800.00 Z100.00 E1000.00
+; Acceleration (units/s2) (P<print-accel> R<retract-accel> T<travel-accel>):
+M204 P800.00 R800.00 T800.00
+; Advanced (B<min_segment_time_us> S<min_feedrate> T<min_travel_feedrate> X<max_jerk> Y<max_jerk> Z<max_jerk> E<max_jerk>):
+M205 B20000.00 S0.00 T0.00 X8.00 Y8.00 Z0.30 E5.00
 ; Auto Bed Leveling:
-M420 S1 Z10.00
-G29 W I0 J0 Z0.10000
-G29 W I1 J0 Z0.13500
-G29 W I2 J0 Z0.12500
-G29 W I3 J0 Z0.09250
-G29 W I0 J1 Z-0.05500
-G29 W I1 J1 Z0.02000
-G29 W I2 J1 Z0.00000
-G29 W I3 J1 Z-0.04500
-G29 W I0 J2 Z-0.05000
-G29 W I1 J2 Z0.01250
-G29 W I2 J2 Z0.00750
-G29 W I3 J2 Z-0.06250
-G29 W I0 J3 Z-0.01750
-G29 W I1 J3 Z0.03000
-G29 W I2 J3 Z0.03000
-G29 W I3 J3 Z-0.03750
+M420 S0 Z10.00 ; Leveling OFF
+G29 W I0 J0 Z-0.03500
+G29 W I1 J0 Z0.01000
+G29 W I2 J0 Z0.03000
+G29 W I3 J0 Z0.02750
+G29 W I4 J0 Z0.09250
+G29 W I5 J0 Z0.06750
+G29 W I6 J0 Z0.14000
+G29 W I7 J0 Z0.12750
+G29 W I8 J0 Z0.00000
+G29 W I0 J1 Z-0.05750
+G29 W I1 J1 Z-0.01250
+G29 W I2 J1 Z0.01750
+G29 W I3 J1 Z0.02000
+G29 W I4 J1 Z0.03500
+G29 W I5 J1 Z0.03000
+G29 W I6 J1 Z0.07250
+G29 W I7 J1 Z0.07250
+G29 W I8 J1 Z0.00000
+G29 W I0 J2 Z-0.07500
+G29 W I1 J2 Z-0.04250
+G29 W I2 J2 Z0.00500
+G29 W I3 J2 Z-0.00750
+G29 W I4 J2 Z0.03250
+G29 W I5 J2 Z0.01250
+G29 W I6 J2 Z0.06250
+G29 W I7 J2 Z0.06250
+G29 W I8 J2 Z0.00000
+G29 W I0 J3 Z-0.09750
+G29 W I1 J3 Z-0.04500
+G29 W I2 J3 Z-0.01250
+G29 W I3 J3 Z-0.01500
+G29 W I4 J3 Z0.01500
+G29 W I5 J3 Z0.01000
+G29 W I6 J3 Z0.07000
+G29 W I7 J3 Z0.07500
+G29 W I8 J3 Z0.00000
+G29 W I0 J4 Z-0.07000
+G29 W I1 J4 Z-0.04500
+G29 W I2 J4 Z0.00250
+G29 W I3 J4 Z-0.02000
+G29 W I4 J4 Z0.02000
+G29 W I5 J4 Z-0.00250
+G29 W I6 J4 Z0.05875
+G29 W I7 J4 Z0.05500
+G29 W I8 J4 Z0.00000
+G29 W I0 J5 Z-0.12000
+G29 W I1 J5 Z-0.07750
+G29 W I2 J5 Z-0.02500
+G29 W I3 J5 Z-0.01750
+G29 W I4 J5 Z0.01250
+G29 W I5 J5 Z-0.00500
+G29 W I6 J5 Z0.06250
+G29 W I7 J5 Z0.08000
+G29 W I8 J5 Z0.00000
+G29 W I0 J6 Z-0.10500
+G29 W I1 J6 Z-0.05500
+G29 W I2 J6 Z-0.01750
+G29 W I3 J6 Z-0.00500
+G29 W I4 J6 Z0.04250
+G29 W I5 J6 Z0.03250
+G29 W I6 J6 Z0.10750
+G29 W I7 J6 Z0.13250
+G29 W I8 J6 Z-3.90000
+G29 W I0 J7 Z-0.07625
+G29 W I1 J7 Z-0.04000
+G29 W I2 J7 Z0.00750
+G29 W I3 J7 Z0.03000
+G29 W I4 J7 Z0.05750
+G29 W I5 J7 Z0.05250
+G29 W I6 J7 Z0.11500
+G29 W I7 J7 Z0.14250
+G29 W I8 J7 Z-3.90000
+G29 W I0 J8 Z0.00000
+G29 W I1 J8 Z0.00000
+G29 W I2 J8 Z0.00000
+G29 W I3 J8 Z0.00000
+G29 W I4 J8 Z0.00000
+G29 W I5 J8 Z0.00000
+G29 W I6 J8 Z0.00000
+G29 W I7 J8 Z0.00000
+G29 W I8 J8 Z0.00000
 ; Material heatup parameters:
-M145 S0 H200.00 B60.00 F255
-M145 S1 H240.00 B100.00 F255
-; PID settings:
-M301 P17.10 I1.39 D52.79
-M304 P54.86 I10.06 D199.38
-; Power-Loss Recovery:
-M413 S1
-; Z-Probe Offset (mm):
-M851 X-31.80 Y-40.50 Z-4.22
-; Filament load/unload lengths:
-M603 L0.00 U100.00
+M145 S0 H205.00 B60.00 F0
+M145 S1 H230.00 B80.00 F128
+M145 S2 H235.00 B60.00 F128
+; Hotend PID:
+M301 P21.36 I1.69 D67.51
+; Bed PID:
+M304 P162.21 I31.68 D553.68
+; LCD Brightness:
+M256 B130
+; Power-loss recovery:
+M413 S0 ; OFF
+; Retract (S<length> F<feedrate> Z<lift>):
+M207 S0.80 W13.00 F2400.00 Z0.20
+; Recover (S<length> F<feedrate>):
+M208 S0.00 W0.00 F2400.00
+; Z-Probe Offset:
+M851 X-31.80 Y-40.50 Z-3.90 ; (mm)
+; Filament load/unload:
+M603 L0.00 U100.00 ; (mm)
+; Filament runout sensor:
+M412 S1 D200.00 ; Sensor ON
+; Mesh Insets and leveling settings:
+C29 L25.00 R195.00 F25.00 B179.50 N8 T50 ; 8x8  T=50°C
+; Physical minimums:
+C100 X-10 Y-8
+; Physical maximums:
+C101 X230 Y220 Z270
+; Bed size:
+C102 X220 Y220
+; Max Extruder temperature:
+C104 T275
+; Park Head:
+C125 X230 Y220 Z20
+; Filament runout sensor:
+C412 M1 ; Active mode: HIGH
+; Invert Extruder:
+C562 E0 ; No inverted
+; Probe Z Speed and Multiple Probing:
+C851 S480 M2
